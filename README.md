@@ -29,11 +29,11 @@ https://github.com/jwzhanggy/SEG-BERT
 
 Each script is used for the following:
 
- * ```convertDIMACStoCNF.py``` takes input a SAT dataset in DIMACS form converts it to S-expressions, in a pandas dataframe
+ * ```convertDIMACStoCNF.py``` takes as input a SAT dataset in DIMACS format and converts it to S-expressions, which are stored in a pandas dataframe
  * ```cnfgendataset.py``` generates a purely random SAT dataset.
  * ```graphcnfgenddataset.py``` generates a dataset of graph coloring problems. Since we use this specifically with SEG-BERT it outputs the graph in the format SEG-BERT expects.
  * ```p2.py``` trains and evaluates BERT on the input dataset.
- * ```script_graph_classification.py``` and ```script_preprocess.py``` come from the SEG-BERT project, we have only made minor changes to add support for the graph coloring dataset. After you clone SEG-BERT, you should replace the versions of these files that were cloned with the version from this repository. You will need to do this for step 3 below to work properly.
+ * ```script_graph_classification.py``` and ```script_preprocess.py``` come from the SEG-BERT project, we have only made minor changes to add support for the graph coloring dataset. After you clone SEG-BERT, you should replace the versions of these files that were cloned with the version from THIS repository. Afterwards, you can delete the versions stored here. You will need to do this for step 3 below to work properly.
 
 Use the following steps to run the code:
 
