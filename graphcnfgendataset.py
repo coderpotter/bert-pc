@@ -1,3 +1,10 @@
+"""
+    Used specifically for generating the graph coloring dataset in a format that
+    can be used with SEG-BERT
+    Antonio Laverghetta Jr.
+    Animesh Nighojkar
+"""
+
 import cnfgen
 import networkx as nx
 from random import uniform
@@ -22,6 +29,10 @@ for i in range(0,1000):
         sat = 1
         total_sat += 1
     
+    # SEG-BERT has a specific format for how it expects graphs to be represented in the file
+    # this will write the files correctly as long as you do NOT change:
+    # 1. Anything written out to the file
+    # 2. any hyperparameters for generating the graph
     dataset.writelines(f"100 {sat}\n")
     for node in G.nodes():
         line = "0"
@@ -33,10 +44,6 @@ for i in range(0,1000):
             line += f" {e[1]}"
         
         dataset.writelines(line+"\n")
-
-    # file = open(f'./dataset/formula{i}_{sat}.dimacs','w+')
-    # file.writelines(formula.dimacs())
-    # file.close()
 
 print(f"total SAT: {total_sat}")
 print(f"total UNSAT: {total_unsat}")

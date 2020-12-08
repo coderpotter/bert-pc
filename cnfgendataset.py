@@ -1,3 +1,9 @@
+"""
+    Used to generate the purely random cnf dataset
+    Antonio Laverghetta Jr.
+    Animesh Nighojkar
+"""
+
 import cnfgen
 
 for i in range(0,100001):

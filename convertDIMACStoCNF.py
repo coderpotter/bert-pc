@@ -1,6 +1,11 @@
 """
     Convert examples in DIMACS form to S-expression
     Save the result as a dataframe
+
+    Some of our experiments used S-expressions, in those cases we rand this script first on the input data
+    The target directory is expected to contain the DIMACS formula one file at a time.
+    Antonio Laverghetta Jr.
+    Animesh Nighojkar
 """
 import pandas as pd
 import re
@@ -13,6 +18,15 @@ location = 'Z:/Code/neurosat/test/sr5/grp2'
 files = [f for f in listdir(location) if isfile(join(location, f))]
 getSat = re.compile(r'sat=.')
 
+# get all the files in the directory
+# for each dimacs file
+    # from the file name, get either 0 or 1 for sat
+    # create the list and append AND at the root
+    # for each line in the file (skip the header)
+        # convert each variable to the sNUMBER, in the appropriate way depending on whether there is a negative
+        # OR everything together and append as sublist
+    # append to the csv
+# save the csv
 for f in files:
     s_exp = ['AND']
     label = re.findall(getSat,f)
@@ -40,13 +54,5 @@ for f in files:
 
 
 outfile.to_csv("./test_final/grp2/test.zip",compression='zip')
-# get all the files in the directory
-# for each dimacs file
-    # from the file name, get either 0 or 1 for sat
-    # create the list and append AND at the root
-    # for each line in the file (skip the header)
-        # convert each variable to the sNUMBER, in the appropriate way depending on whether there is a negative
-        # OR everything together and append as sublist
-    # append to the csv
-# save the csv
+
 
