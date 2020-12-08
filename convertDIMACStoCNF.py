@@ -13,7 +13,7 @@ from os import listdir
 from os.path import isfile, join
 
 outfile = pd.DataFrame(columns=["S-exp",'SAT'])
-location = 'Z:/Code/neurosat/test/sr5/grp2'
+location = 'Z:/Code/neurosat/test/sr5/grp2' # be sure to change this to point to where the dataset is stored
 
 files = [f for f in listdir(location) if isfile(join(location, f))]
 getSat = re.compile(r'sat=.')
