@@ -29,7 +29,8 @@ https://github.com/jwzhanggy/SEG-BERT
 
 Each script is used for the following:
 
- * ```convertDIMACStoCNF.py``` takes as input a SAT dataset in DIMACS format and converts it to S-expressions, which are stored in a pandas dataframe
+ * ```convertDIMACStoCNF.py``` takes as input a SAT dataset in DIMACS format and converts it to S-expressions, which are stored in a pandas dataframe.
+ * ```3satTograph.py``` takes as input a SAT dataset in DIMACS format and converts it to graphs which can be used for SegBERT.
  * ```cnfgendataset.py``` generates a purely random SAT dataset.
  * ```graphcnfgenddataset.py``` generates a dataset of graph coloring problems. Since we use this specifically with SEG-BERT it outputs the graph in the format SEG-BERT expects.
  * ```p2.py``` trains and evaluates BERT on the input dataset.
