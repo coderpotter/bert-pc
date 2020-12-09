@@ -1,3 +1,8 @@
+'''
+Antonio Laverghetta Jr., Animesh Nighojkar
+Takes as input a SAT dataset in DIMACS format and converts it to graphs which can be used for SegBERT.
+'''
+
 op = open('segbert/graph-dataset/satlib-graphs/data.txt', 'w+')
 op.writelines('200\n')
 
