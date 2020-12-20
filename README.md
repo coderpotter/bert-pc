@@ -1,5 +1,5 @@
 # bert-pc
-Using BERT and SEG-BERT to solve propositional calculus SAT
+This repository includes code generating boolean satisfiability datasets, and evaluating them using BERT, Longformer, and other state-of-the-art transformer models. We also experimented with a recent graph neural network based on BERT, called SEG-BERT. Please see their repository for instructions on installation and usage (link below).
 
 # Dependencies
 You should install the following in your python environment:
@@ -34,7 +34,7 @@ Each script is used for the following:
  * ```cnfgendataset.py``` generates a purely random SAT dataset.
  * ```graphcnfgenddataset.py``` generates a dataset of graph coloring problems. Since we use this specifically with SEG-BERT it outputs the graph in the format SEG-BERT expects.
  * ```p2.py``` trains and evaluates BERT on the input dataset.
- * ```script_graph_classification.py``` and ```script_preprocess.py``` come from the SEG-BERT project, we have only made minor changes to add support for the graph coloring dataset. After you clone SEG-BERT, you should replace the versions of these files that were cloned with the version from THIS repository. Afterwards, you can delete the versions stored here. You will need to do this for step 3 below to work properly.
+ 
 
 Use the following steps to run the code:
 
