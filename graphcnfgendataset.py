@@ -5,6 +5,7 @@
     Animesh Nighojkar
 """
 
+
 import cnfgen
 import networkx as nx
 from random import uniform
@@ -16,7 +17,7 @@ dataset.writelines("1000\n")
 total_sat = 0
 total_unsat = 0
 
-for i in range(0,1000):
+for _ in range(0,1000):
     # write each problem
     p = uniform(0.0,1.0)
     G = nx.erdos_renyi_graph(100,p)
@@ -28,7 +29,7 @@ for i in range(0,1000):
     else:
         sat = 1
         total_sat += 1
-    
+
     # SEG-BERT has a specific format for how it expects graphs to be represented in the file
     # this will write the files correctly as long as you do NOT change:
     # 1. Anything written out to the file
@@ -42,7 +43,7 @@ for i in range(0,1000):
         for e in edges:
             # append all of the outgoing node ids
             line += f" {e[1]}"
-        
+
         dataset.writelines(line+"\n")
 
 print(f"total SAT: {total_sat}")

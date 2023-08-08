@@ -7,6 +7,7 @@
     Antonio Laverghetta Jr.
     Animesh Nighojkar
 """
+
 import pandas as pd
 import re
 from os import listdir
@@ -18,24 +19,13 @@ location = 'Z:/Code/neurosat/test/sr5/grp2' # be sure to change this to point to
 files = [f for f in listdir(location) if isfile(join(location, f))]
 getSat = re.compile(r'sat=.')
 
-# get all the files in the directory
-# for each dimacs file
-    # from the file name, get either 0 or 1 for sat
-    # create the list and append AND at the root
-    # for each line in the file (skip the header)
-        # convert each variable to the sNUMBER, in the appropriate way depending on whether there is a negative
-        # OR everything together and append as sublist
-    # append to the csv
 # save the csv
 for f in files:
     s_exp = ['AND']
     label = re.findall(getSat,f)
-    if '0' in label[0]:
-        label = 0
-    else:
-        label = 1
-    file = open(location + '/' + f,'r')
-    for line in file.readlines():
+    label = 0 if '0' in label[0] else 1
+    file = open(f'{location}/' + f, 'r')
+    for line in file:
         sub_exp = ['OR']
         # skip the header
         if 'p' in line:
